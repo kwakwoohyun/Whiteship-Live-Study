@@ -122,3 +122,33 @@
     - `(변환할타입) 변환할데이터;`
     - `int intValue = 1;`
     - `byte byteValue = (byte)intValue;`
+------------------
+> 1차 및 2차 배열 선언하기
+
+![배열](https://t1.daumcdn.net/cfile/tistory/99948E495E61E2BF0A "출처 https://ifuwanna.tistory.com/231")
+- 배열(Array)
+    - 배열(Array)은 선형 자료구조(Data Structure)중 하나로, 동일한 타입의 연관된 데이터를 메모리에 연속적으로 저장하여 하나의 변수에 묶어서 관리하기 위한 자료구조이다. 가장 기본적인 자료구조인만큼 거의 모든 언어에서 구현되어 있다.
+    - 배열(Array)의 길이는 최초 선언한 값으로 고정되며 인덱스(Index)를 통해 데이터에 접근할 수 있다.
+    - 참고로 기본타입(Primitive type)의 배열인 경우 초기값을 가지고 있는 반면에(int = 0 / String = "") 참조타입(Reference type)의 배열을 선언했을 경우 배열내 엘리먼트의 초기값이 null임을 주의해야 한다.
+- 배열(Array) 선언과 초기화
+    - `int[] arr;` -> 크기 할당 & 초기화 없이 배열 참조변수만 선언
+    - `int[] arr = new int[5];` -> 선언과 동시에 배열 크기 할당
+    - `int[] arr = {1, 3, 5, 7, 9};` -> 기존 배열의 참조 변수에 초기화 할당하기
+    - `int[] odds = {1,3,5,7,9};` -> 선언과 동시에 배열의 크기 지정 및 값 초기화
+    - `int[][] arr = new int[4][3];` -> 3의 크기의 배열을 4개 가질 수 있는 2차원 배열 할당
+- 배열(Array) 출력하기
+    - `for`문 사용
+    - `Arrays.toString(arr);`사용
+-----------------------
+> 타입 추론, var
+
+- Java 10에서 var라는 Local Variable Type-Inference 가 추가되었다.
+- 타입 추론이란 코드 작성 당시 타입이 정해지지 않았지만, 컴파일러가 그 타입을 유추하는 것이다.
+- 자바 10부터 타입 추론을 지원하는 `var`키워드가 추가되었다. 이 키워드는 local variable이면서 선언과 동시에 initializer가 필수적으로 요구된다.
+- 타입 추론이 가능하다는 얘기는 타입을 명시하지 않아도 된다는 말 -> 코드량을 줄이고, 코드의 가독성을 높일 수 있다.
+- 기존의 자바에서는 일반 변수에 대해서는 타입추론이 지원되지 않고, generics와 lambda식에 대해서만 타입 추론을 지원하고 있었다.
+- `String message = "data";` -> Java 9 이하
+- `var message = "the initializer present on the right-hand side";` -> Java 10 이상
+- 자바 7에서 다이아몬드 연산자라는 방식이 추가되었는데, 자바 10에서 나온 var 와 함께 사용하게 되면 컴파일 에러가 발생한다.
+    - `var messages = new ArrayList<>();` -> 컴파일러가 타입을 유추할 수 있는 정보가 없다.
+- IDE가 없으면 어떤 데이터 타입이 들어오는지 확인하기 어렵다.
