@@ -96,4 +96,80 @@
             ```
 ![스위치문](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcqPEVa%2FbtqOtfP0CE6%2FWHCO43zL2jeHF11UcZvuXk%2Fimg.png "출처 https://kils-log-of-develop.tistory.com/349")
 
+-------
+> 반복문
+
+- 자바의 반복문은 조건이 참이 될 때까지 블록을 반복적으로 실행하는 데 사용된다.
+- 루프를 사용하면 코드를 여러 번 또는 조건을 만족할 때까지 실행할 수 있다.
+
+![반복문](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FwgV9T%2FbtqOqUrOCDX%2FfhRVzcaStumboIZsoP1RjK%2Fimg.png "출처 https://kils-log-of-develop.tistory.com/349")
+
+- `for`문
+    - 사용자가 코드 블록을 여러 번 실행하려는 경우 사용한다.
+    - 반복 횟수가 고정되어 있는 것이 특징이다.
+    -  `for ( ;; )` 의경우는 무제한 반복횟수라고 볼 수 있다.
+    - `for` 루프는 초기화, 조건, `for` 루프 본문, 증가 / 감소의 네 부분으로 구성된다.
+    1. 초기화 
+        - 초기화는 루프의 첫 번째 부분이며 한 번만 발생한다.
+        - 여기에서 변수를 선언 및 초기화하거나 이미 초기화 된 변수를 사용할 수 있다.
+    2. 조건
+        - 조건은 루프의 두 번째 부분이며 부울 값을 `true` 또는 `false`로 반환해야하는 조건을 제공 / 작성해야한다.
+        - 조건이 거짓이 될 때까지 실행을 계속한다.
+    3. for 루프 본문
+        - 조건 참을 평가 한 후 매번 실행되는 코드 블록을 포함한다.
+    4. 증가 / 감소
+        - 변수의 인덱스 값을 업데이트하는데 사용됩니다.
         
+    ![반복문](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbcGiKo%2FbtqOvdRbSsE%2FFhTUipIn8BX2toBxnEwHlk%2Fimg.png "출처 https://kils-log-of-develop.tistory.com/349")
+    ```
+    for(initialization; condition; increment/decrement)
+        {
+            // Body of for loop
+        }
+    ```
+
+- `while`문
+    - 루프 상태  조건이 만족 될 때까지 허용 코드가 반복하여 실행된다.
+    - 반복 횟수가 고정되지 않은 경우 `while` 루프 를 사용하는 것이 좋다.
+    ```
+    while(condition)
+        {
+            // Body of while loop
+        }
+    ```
+    - `true`를 반환 하면 `while` 루프 의 본문 이 실행된다.
+    - `while` 루프 의 본문 에서 명령문은 다음 반복을 위해 처리되는 변수에 대한 업데이트 값을 포함한다.
+    - `false`를 반환하면 루프가 종료되어 수명주기의 끝을 표시한다.
+    - `while` 루프 조건에서 `true`를 전달하면 무한 루프가된다.
+
+    ![반복문](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fb47mzT%2FbtqOtFnmy5l%2FYS9GErIOvxO9WqrcZhIobk%2Fimg.png "출처 https://kils-log-of-develop.tistory.com/349")
+
+- `do-while`문
+    - `while` 루프와 거의 유사하다. 
+    - 루프 본문을 실행 한 후 조건을 확인하는 유일한 차이점이있다.
+    - 조건에 관계 없이 적어도 한번 이상 반복문을 돈다는 특징을 가진다. 
+    - Exit Control Loop 라고도  합니다. 
+    ```
+    do
+    {
+        // Body of loop
+    } While(condition);
+    ```
+    ![반복문](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbnacqS%2FbtqOtDpxm01%2FqY8Qji1swG3gkRGF5asuj1%2Fimg.png "출처 https://kils-log-of-develop.tistory.com/349")
+
+- `foreach`문
+    - `foreach`는 J2SE 5.0 부터 추가되었다.
+    - `foreach` 라는 키워드가 따로 있는 것은 아니고 동일한 for를 이용한다. 
+    - 하지만 조건식 부분이 조금 다르다. 보통 다른 언어에서 for each 라고 많이 하므로 자바에서도 보통 for each문이라고 말한다.
+    - `foreach`문은 따로 반복회수를 명시적으로 주는 것이 불가능하고, 1스탭씩 순차적으로 반복될때만 사용가능하다는 제약이 있다.
+    ```
+    for (변수타입 변수명 : 루프를 돌릴 객체) {
+       // 실행 코드
+    }
+    ```
+
+    > 과제 (옵션)은 진도를 다 따라가고 추가하겠습니다. ㅠ_ㅠ
+    
+    전에 인프런 강의를 통한 JUnit를 수강하며 정리한 블로그 일단 올려놓겠습니다!
+    
+    [JUnit5 티스토리 블로그](https://lifetime-devlop.tistory.com/)
